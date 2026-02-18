@@ -343,28 +343,31 @@
 
         /* Responsive */
         @media (max-width: 600px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .nav a {
-                margin: 0 10px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .buku-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .buku-download {
-                width: 100%;
-            }
-            .btn-download {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .nav a {
+        margin: 0;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        white-space: nowrap;
+    }
+    
+    .btn-donasi-nav {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 <body>
