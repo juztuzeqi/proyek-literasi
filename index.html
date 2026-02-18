@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indonesia Darurat Literasi - Buku Anak Gratis</title>
+    <title>Indonesia Darurat Literasi - Buku Cerita Anak Gratis</title>
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
             color: #d35400;
         }
 
-        .btn-donasi {
+        .btn-donasi-nav {
             background: #d35400;
             color: white !important;
             padding: 8px 18px;
@@ -134,64 +134,73 @@
             margin: 0 auto;
         }
 
-        /* Grid buku */
-        .buku-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+        /* LIST BUKU VERTIKAL */
+        .buku-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
         }
 
-        .buku-card {
+        .buku-item {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid #f0e6d9;
+            border-radius: 15px;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: all 0.2s;
         }
 
-        .buku-header {
-            background: #d35400;
-            color: white;
-            padding: 15px 20px;
+        .buku-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: #d35400;
         }
 
-        .buku-header h3 {
+        .buku-info {
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .buku-info h3 {
             font-size: 1.3rem;
             margin-bottom: 5px;
+            color: #2c3e50;
         }
 
-        .buku-header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        .buku-info p {
+            color: #5a6b7a;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
-        .buku-content {
-            padding: 20px;
-        }
-
-        .buku-preview {
-            background: #fdf4e3;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            border-left: 4px solid #d35400;
+        .buku-download {
+            flex: 0 0 auto;
         }
 
         .btn-download {
             background: #27ae60;
             color: white;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 10px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
-        /* Tentang penulis - minimal */
+        .btn-download:hover {
+            background: #2ecc71;
+        }
+
+        /* Tentang penulis */
         .tentang {
             background: white;
             border-radius: 20px;
@@ -227,7 +236,7 @@
             margin-bottom: 10px;
         }
 
-        /* QRIS Section - sederhana */
+        /* QRIS Section */
         .qris-section {
             background: #2c3e50;
             border-radius: 20px;
@@ -252,13 +261,6 @@
             margin-bottom: 20px;
         }
 
-        .qris-badge {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-        }
-
         .qris-code {
             flex: 1;
             background: white;
@@ -278,42 +280,21 @@
             margin: 5px 0;
         }
 
-        .btn-qris {
-            background: #27ae60;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
+        .rekening {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 0.95rem;
         }
 
-        /* Download area */
-        .download-area {
+        /* Download Semua Section */
+        .download-semua {
             background: white;
             border-radius: 20px;
             padding: 40px;
             text-align: center;
             margin: 40px 0;
-        }
-
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .download-item {
-            background: #fdf4e3;
-            padding: 25px 15px;
-            border-radius: 15px;
-        }
-
-        .download-item i {
-            font-size: 2rem;
-            color: #d35400;
-            margin-bottom: 10px;
         }
 
         .btn-download-all {
@@ -322,11 +303,24 @@
             padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
             font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+            font-size: 1.1rem;
         }
 
-        /* Footer minimal */
+        .btn-download-all:hover {
+            background: #3498db;
+        }
+
+        .catatan-kecil {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Footer */
         .footer {
             background: #2c3e50;
             color: white;
@@ -359,155 +353,170 @@
             .hero h1 {
                 font-size: 2rem;
             }
+            .buku-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .buku-download {
+                width: 100%;
+            }
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header minimal -->
+    <!-- Header -->
     <div class="header">
         <div class="container header-content">
-            <div class="logo">📚 Literasi Anak</div>
+            <div class="logo">📚 Indonesia Darurat Literasi</div>
             <div class="nav">
                 <a href="#buku">Buku</a>
                 <a href="#tentang">Tentang</a>
                 <a href="#donasi">Donasi</a>
-                <a href="#download" class="btn-donasi"><i class="fas fa-download"></i> Download</a>
+                <a href="#donasi" class="btn-donasi-nav"><i class="fas fa-download"></i> Download</a>
             </div>
         </div>
     </div>
 
-    <!-- Hero sederhana - hanya pesan inti -->
+    <!-- Hero -->
     <div class="hero">
         <div class="container">
             <h1>
                 Indonesia Darurat Literasi
                 <span>Mari tumbuhkan minat baca anak sejak dini</span>
             </h1>
-            <p>Buku cerita anak gratis tentang alam sekitar. Untuk pendidikan, bukan komersial.</p>
+            <p>Buku cerita anak gratis. Untuk pendidikan, bukan komersial.</p>
             <a href="#buku" class="btn">Lihat Buku</a>
             <a href="#donasi" class="btn btn-outline">Dukung Donasi</a>
         </div>
     </div>
 
-    <!-- Koleksi Buku (fokus utama) -->
+    <!-- Daftar Buku (LIST VERTIKAL) -->
     <div class="container" id="buku">
         <div class="section-title">
-            <h2>📖 Seri "Alam Bercerita"</h2>
-            <p>Cerita tentang Budi dan fenomena alam untuk anak usia 4-8 tahun</p>
+            <h2>📖 Koleksi Cerita Budi</h2>
+            <p>Semua buku boleh didownload dengan donasi seikhlasnya dan bisa dicetak. Silakan bagikan untuk kebaikan.</p>
         </div>
 
-        <div class="buku-grid">
-            <!-- Buku 1 -->
-            <div class="buku-card">
-                <div class="buku-header">
-                    <h3>Alam Bercerita 1</h3>
-                    <p>15 cerita tentang cuaca</p>
+        <div class="buku-list">
+            <!-- Buku 1: Belajar Bersama Budi -->
+<div class="buku-item">
+    <div class="buku-info">
+        <h3>📘 Belajar Bersama Budi</h3>
+        <p>Cerita tentang sekolah, persahabatan, dan kegiatan sehari-hari (usia 4–7 tahun)</p>
+    </div>
+    <div class="buku-download">
+        <a href="https://raw.githubusercontent.com/juztuzeqi/proyek-literasi/main/Belajar%20Bersama%20Budi.pdf" class="btn-download" download>
+            <i class="fas fa-file-pdf"></i> PDF
+        </a>
+    </div>
+</div>
+
+            <!-- Buku 2: Alam Bercerita 1 -->
+            <div class="buku-item">
+                <div class="buku-info">
+                    <h3>🌦️ Alam Bercerita 1</h3>
+                    <p>15 cerita tentang cuaca dan fenomena alam (usia 4–7 tahun)</p>
                 </div>
-                <div class="buku-content">
-                    <div class="buku-preview">
-                        ☁️ Hujan, Pelangi, Angin, Awan, Petir, Kabut, Banjir, Bintang, Gerhana...
-                    </div>
-                    <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                <div class="buku-download">
+                    <a href="#" class="btn-download" download><i class="fas fa-file-pdf"></i> PDF</a>
                 </div>
             </div>
 
-            <!-- Buku 2 -->
-            <div class="buku-card">
-                <div class="buku-header">
-                    <h3>Alam Bercerita 2</h3>
-                    <p>15 cerita pengamatan alam</p>
+            <!-- Buku 3: Alam Bercerita 2 -->
+            <div class="buku-item">
+                <div class="buku-info">
+                    <h3>🍃 Alam Bercerita 2</h3>
+                    <p>15 cerita pengamatan alam sehari-hari (usia 4–7 tahun)</p>
                 </div>
-                <div class="buku-content">
-                    <div class="buku-preview">
-                        🍃 Daun kering, genangan air, embun, layang-layang, hujan panas, angin laut...
-                    </div>
-                    <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                <div class="buku-download">
+                    <a href="#" class="btn-download" download><i class="fas fa-file-pdf"></i> PDF</a>
                 </div>
             </div>
 
-            <!-- Buku 3 -->
-            <div class="buku-card">
-                <div class="buku-header">
-                    <h3>Alam Bercerita 3</h3>
-                    <p>15 cerita sains sederhana</p>
+            <!-- Buku 4: Alam Bercerita 3 -->
+            <div class="buku-item">
+                <div class="buku-info">
+                    <h3>🔍 Alam Bercerita 3</h3>
+                    <p>15 cerita sains sederhana (usia 5–8 tahun)</p>
                 </div>
-                <div class="buku-content">
-                    <div class="buku-preview">
-                        🔍 Mengapa hujan turun? Mengapa ada pelangi? Mengapa gempa? Dan lainnya...
-                    </div>
-                    <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                <div class="buku-download">
+                    <a href="#" class="btn-download" download><i class="fas fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+
+            <!-- Buku 5: Hidup Bersama -->
+            <div class="buku-item">
+                <div class="buku-info">
+                    <h3>🤝 Hidup Bersama</h3>
+                    <p>Cerita tentang sopan santun, aturan, dan hidup bermasyarakat (usia 4–7 tahun)</p>
+                </div>
+                <div class="buku-download">
+                    <a href="#" class="btn-download" download><i class="fas fa-file-pdf"></i> PDF</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Tentang Penulis (sangat sederhana) -->
+    <!-- Tentang Penulis -->
     <div class="container" id="tentang">
         <div class="tentang">
             <div class="tentang-flex">
                 <div class="tentang-foto">✍️</div>
                 <div class="tentang-text">
                     <h3>Tentang Penulis</h3>
-                    <p>Saya memulai proyek ini karena prihatin dengan rendahnya minat baca anak Indonesia. Semua buku bisa diunduh gratis. Jika bermanfaat, silakan donasi untuk membantu pencetakan dan distribusi ke daerah yang membutuhkan.</p>
+                    <p>Saya memulai proyek ini karena prihatin dengan rendahnya minat baca anak Indonesia. Semua buku bisa diunduh gratis. Jika bermanfaat, silahkan donasi untuk biaya operasional agar proyek ini bisa terus berkembang.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- QRIS Donasi (fokus) -->
-    <div class="container" id="donasi">
-        <div class="qris-section">
-            <div class="qris-flex">
-                <div class="qris-info">
-                    <h2>Dukung dengan Donasi</h2>
-                    <p>Donasi akan digunakan untuk mencetak buku dan mendistribusikannya ke anak-anak yang kurang mampu.</p>
-                    <div class="qris-badge">
-                        <i class="fas fa-check-circle"></i> Rp 50.000 = 1 paket buku untuk anak
-                    </div>
-                    <div class="qris-badge">
-                        <i class="fas fa-check-circle"></i> Rp 100.000 = 1 sesi mendongeng
-                    </div>
+<!-- QRIS Donasi -->
+<div class="container" id="donasi">
+    <div class="qris-section">
+        <div class="qris-flex">
+            <div class="qris-info">
+                <h2>Dukung dengan Donasi</h2>
+                <p>Donasi akan digunakan untuk biaya operasional agar proyek ini bisa berlanjut dan berkembang. Terima kasih untuk dukungannya!</p>
+            </div>
+            <div class="qris-code">
+                <img src="https://raw.githubusercontent.com/juztuzeqi/proyek-literasi/main/qris-saya.jpeg" alt="QRIS Donasi" style="max-width: 200px; border-radius: 10px;">
+                <p><strong>Scan QRIS untuk donasi</strong></p>
+                <div class="rekening">
+                    <p style="color: #2c3e50;">Atau transfer Bank BCA • 0332378943</p>
+                    <p style="color: #2c3e50;">a.n. Yustus Gekisianto</p>
                 </div>
-                <div class="qris-code">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f0e6d9'/%3E%3Ctext x='40' y='110' font-family='Arial' font-size='16' fill='%232c3e50'%3EQRIS%3C/text%3E%3C/svg%3E" alt="QRIS">
-                    <p><strong>Scan untuk donasi</strong></p>
-                    <p style="font-size: 0.9rem;">Bank BCA • 1234567890</p>
-                    <p style="font-size: 0.8rem;">a.n. Literasi Anak</p>
-                    <a href="#" class="btn-qris">Konfirmasi Donasi</a>
+                
+                <!-- INI YANG DIPERBAIKI: warna gelap, no opacity, font tebal -->
+                <div style="margin-top: 20px; padding-top: 10px; border-top: 1px dashed #d35400; color: #2c3e50; font-weight: 600; font-size: 0.95rem;">
+                    ✨ Transfer seikhlasnya, tanpa konfirmasi.<br>
+                    ⬇️ <span style="color: #d35400;">Scroll ke bawah</span> untuk download.
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Download Area -->
-    <div class="container" id="download">
-        <div class="download-area">
-            <h2 style="margin-bottom: 15px;">📥 Download Semua</h2>
-            <p style="margin-bottom: 30px;">Semua buku gratis dan bisa dicetak. Silakan bagikan untuk kebaikan.</p>
-            
-            <div class="download-grid">
-                <div class="download-item">
-                    <i class="fas fa-cloud-sun"></i>
-                    <h4>Buku 1</h4>
-                    <a href="#" class="btn-download" style="margin-top: 10px;">PDF</a>
-                </div>
-                <div class="download-item">
-                    <i class="fas fa-leaf"></i>
-                    <h4>Buku 2</h4>
-                    <a href="#" class="btn-download" style="margin-top: 10px;">PDF</a>
-                </div>
-                <div class="download-item">
-                    <i class="fas fa-flask"></i>
-                    <h4>Buku 3</h4>
-                    <a href="#" class="btn-download" style="margin-top: 10px;">PDF</a>
-                </div>
-            </div>
-
-            <a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download Semua (ZIP)</a>
+<!-- Download Semua -->
+<div class="container" id="download">
+    <div class="download-semua">
+        <h2 style="margin-bottom: 15px;">📥 Download Semua Buku</h2>
+        <p style="margin-bottom: 30px;">Download paket lengkap 5 buku dalam satu file ZIP.</p>
+        
+        <a href="#" class="btn-download-all" download>
+            <i class="fas fa-download"></i> Download Semua (ZIP)
+        </a>
+        
+        <div class="catatan-kecil">
+            * File PDF siap cetak. Silakan bagikan untuk kebaikan.
         </div>
     </div>
+</div>
 
-    <!-- Footer sederhana -->
+    <!-- Footer -->
     <div class="footer">
         <div class="container">
             <div style="margin-bottom: 20px;">
@@ -517,9 +526,22 @@
                 <a href="#download">Download</a>
             </div>
             <div class="copyright">
-                © 2025 Indonesia Darurat Literasi. Semua buku gratis untuk pendidikan.
+                © 2026 Indonesia Darurat Literasi. Semua buku gratis untuk pendidikan.
             </div>
         </div>
     </div>
+
+    <!-- JavaScript untuk smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
