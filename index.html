@@ -368,24 +368,40 @@
         font-size: 0.9rem;
     }
 }
-/* Perbaikan tampilan HP untuk QRIS */
+/* Responsive untuk HP (bagian QRIS diperbaiki) */
 @media (max-width: 600px) {
+    .qris-section {
+        padding: 30px 15px;  /* kurangi padding luar biar nggak sempit */
+    }
+
     .qris-flex {
         flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        align-items: stretch;  /* biar lebarnya maksimal */
+        gap: 25px;
     }
 
     .qris-info {
-        text-align: center;
+        text-align: left;  /* biar teks "Dukung dengan Donasi" rata kiri */
         width: 100%;
+        padding: 0 5px;    /* sedikit aman di kiri */
+    }
+
+    .qris-info h2 {
+        font-size: 1.8rem;  /* sedikit lebih kecil */
+        text-align: left;   /* paksa rata kiri */
+        margin-bottom: 15px;
+    }
+
+    .qris-info p {
+        text-align: left;
     }
 
     .qris-code {
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-        padding: 25px 15px;
+        max-width: 100%;    /* biar nggak keluar */
+        margin: 0;          /* reset margin */
+        padding: 20px 15px;
+        box-sizing: border-box; /* penting biar padding dihitung dalam lebar */
     }
 
     .qris-code img {
@@ -397,6 +413,8 @@
     .rekening {
         width: 100%;
         text-align: center;
+        padding: 8px 5px;
+        box-sizing: border-box;
     }
 }
     </style>
