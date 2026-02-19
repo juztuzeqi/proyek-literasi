@@ -368,6 +368,37 @@
         font-size: 0.9rem;
     }
 }
+/* Perbaikan tampilan HP untuk QRIS */
+@media (max-width: 600px) {
+    .qris-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .qris-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .qris-code {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 25px 15px;
+    }
+
+    .qris-code img {
+        max-width: 160px;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    .rekening {
+        width: 100%;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
